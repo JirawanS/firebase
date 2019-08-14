@@ -1,0 +1,43 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Firebase</title>
+</head>
+
+<body>
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBLnG92S7xATFaaKcP9iJHy_q7uIGiDbB0",
+            authDomain: "web01-6d7a0.firebaseapp.com",
+            databaseURL: "https://web01-6d7a0.firebaseio.com",
+            projectId: "web01-6d7a0",
+            storageBucket: "",
+            messagingSenderId: "743542567389",
+            appId: "1:743542567389:web:b63ddefd7a7ccf8b"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        function writeData() {
+            firebase.database().ref("User").set({
+                name: document.getElementById("nameFiled").value,
+                age: document.getElementById("ageField").value
+
+            });
+        }
+    </script>
+
+    <h1>User Database</h1>
+    <input type="text" placeholder="name" id="nameField">
+    <input type="text" placeholder="age" id="ageField">
+    <button onclick="writeData()">submit</button>
+
+
+</body>
+
+</html>
